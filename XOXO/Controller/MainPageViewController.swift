@@ -7,13 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainPageViewController: UIViewController {
+    
+    var uiFunctions = MainPageUIFunctions()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        uiFunctions.setupView(onView: view)
+
     }
+    
+    
+    
 
 
 }
-
