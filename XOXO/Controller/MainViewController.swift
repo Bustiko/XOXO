@@ -15,7 +15,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         uiFunctions.setupView(onView: view)
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let destination = ResultPageViewController()
+        destination.modalPresentationStyle = .popover
+        self.present(destination, animated: true)
+    }
+    
+    
+    
 
 }
 

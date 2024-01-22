@@ -20,6 +20,7 @@
 		C9420AA02B5D74AD00E2984C /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9420A9F2B5D74AD00E2984C /* ButtonsView.swift */; };
 		C9420AA22B5D827700E2984C /* MainPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9420AA12B5D827700E2984C /* MainPageUIFunctions.swift */; };
 		C9420AA42B5D86AB00E2984C /* ResultPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9420AA32B5D86AB00E2984C /* ResultPageUIFunctions.swift */; };
+		C950E1E82B5E50410047B695 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950E1E72B5E50410047B695 /* ResultPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C9420A9F2B5D74AD00E2984C /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		C9420AA12B5D827700E2984C /* MainPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageUIFunctions.swift; sourceTree = "<group>"; };
 		C9420AA32B5D86AB00E2984C /* ResultPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageUIFunctions.swift; sourceTree = "<group>"; };
+		C950E1E72B5E50410047B695 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C936A8BB2B5D680700104736 /* MainViewController.swift */,
+				C950E1E72B5E50410047B695 /* ResultPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				C9420AA02B5D74AD00E2984C /* ButtonsView.swift in Sources */,
 				C936A8B82B5D680700104736 /* AppDelegate.swift in Sources */,
 				C9420AA42B5D86AB00E2984C /* ResultPageUIFunctions.swift in Sources */,
+				C950E1E82B5E50410047B695 /* ResultPageViewController.swift in Sources */,
 				C9420AA22B5D827700E2984C /* MainPageUIFunctions.swift in Sources */,
 				C936A8BA2B5D680700104736 /* SceneDelegate.swift in Sources */,
 				C9420A9E2B5D722700E2984C /* UIFunctions.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 class ButtonsView: UIView {
     
     private let uiFunctions = UIFunctions()
-    private var buttonTotal = 9
+    private var buttonTotal: Int
     
     private var buttons: [UIButton] = []
     
@@ -25,7 +25,8 @@ class ButtonsView: UIView {
     }
     
     internal func setupView() {
-        let buttonTotalRooted = Int(sqrt(Double(buttonTotal)))
+        
+        let squareRooted = Int(sqrt(Double(buttonTotal)))
         
         for _ in 0..<(buttonTotal) {
             let button = uiFunctions.makeXOButton()
@@ -33,63 +34,81 @@ class ButtonsView: UIView {
             self.addSubview(button)
         }
         
+        var currentMiddleRow = 0
         
         for x in 0..<(buttonTotal) {
+            
             buttons[x].widthAnchor.constraint(equalToConstant: 97).isActive = true
             buttons[x].heightAnchor.constraint(equalToConstant: 97).isActive = true
             buttons[x].translatesAutoresizingMaskIntoConstraints = false
             
-            switch x {
-            case 0:
-                buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-                break
-            case 1:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-                break
-            case 2:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-                break
-            case 3:
-                buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[0].bottomAnchor).isActive = true
-                break
-            case 4:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[0].bottomAnchor).isActive = true
-                break
-            case 5:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[0].bottomAnchor).isActive = true
-                break
-            case 6:
-                buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[3].bottomAnchor).isActive = true
-                break
-            case 7:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[3].bottomAnchor).isActive = true
-                break
-            case 8:
-                buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: buttons[3].bottomAnchor).isActive = true
-                break
-            default:
-                break
+            if x >= 0 && x <= (squareRooted-1) {
+                if x == 0 {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                    
+                }else if x == (squareRooted-1) {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                    
+                }else {
+                
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    
+                }
+            }else if x >= squareRooted && x < (buttonTotal-squareRooted) {
+                currentMiddleRow += 1
+                
+                if x == squareRooted*currentMiddleRow {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    
+                }else if x == (squareRooted*currentMiddleRow-1) {
+                    currentMiddleRow -= 1
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    
+                }else {
+                    currentMiddleRow -= 1
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+        
+                }
+                
+            }else {
+                if x == (buttonTotal-squareRooted) {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    
+                }else if x == buttonTotal-1 {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    
+                }else {
+                    
+                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
+                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
+                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    
+                }
+                
             }
-            
         }
+        
     }
     
 }
