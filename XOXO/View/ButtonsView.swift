@@ -41,7 +41,7 @@ class ButtonsView: UIView {
             buttons[x].widthAnchor.constraint(equalToConstant: 97).isActive = true
             buttons[x].heightAnchor.constraint(equalToConstant: 97).isActive = true
             buttons[x].translatesAutoresizingMaskIntoConstraints = false
-            
+        
             if x >= 0 && x <= (squareRooted-1) {
                 if x == 0 {
                     
