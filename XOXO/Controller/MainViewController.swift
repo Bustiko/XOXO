@@ -15,13 +15,15 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 0.99, green: 0.96, blue: 0.93, alpha: 1.00)
-        uiFunctions.setupView(onView: view)
+        uiFunctions.setupView(onView: view, target: self, action: #selector(buttonPressed))
+        
+        
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @objc func buttonPressed(_ animated: Bool) {
         let destination = ResultPageViewController()
-        destination.modalPresentationStyle = .popover
+        destination.modalPresentationStyle = .fullScreen
         self.present(destination, animated: true)
     }
     

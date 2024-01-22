@@ -15,9 +15,15 @@ class ResultPageViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 0.99, green: 0.96, blue: 0.93, alpha: 1.00)
-        uiFunctions.setupView(onView: view)
+        uiFunctions.setupView(onView: view, target: self, action: #selector(playAgainPressed))
         
     }
+    
+    
+    @objc func playAgainPressed() {
+        self.dismiss(animated: true)
+    }
+    
     
 
 

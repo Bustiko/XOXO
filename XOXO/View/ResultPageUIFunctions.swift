@@ -11,7 +11,7 @@ struct ResultPageUIFunctions {
     
     let uifunctions = UIFunctions()
     
-    func setupView(onView view: UIView) {
+    func setupView(onView view: UIView, target: Any?, action: Selector) {
         let label = uifunctions.makeLabel(withText: "YOU WIN", withSize: 50)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -21,6 +21,7 @@ struct ResultPageUIFunctions {
         view.addSubview(label)
         view.addSubview(button)
         
+        button.addTarget(target, action: action, for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -11,14 +11,14 @@ struct MainPageUIFunctions {
     let uiFunctions = UIFunctions()
     let buttonTotal = 16
     
-    func setupView(onView view: UIView) {
+    func setupView(onView view: UIView, target: Any?, action: Selector ) {
         let label = uiFunctions.makeLabel(withText: "YOUR TURN", withSize: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         let buttonView = ButtonsView(buttonTotal: buttonTotal)
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        buttons[0].addTarget(target, action: action, for: .touchUpInside)
         
         view.addSubview(label)
         view.addSubview(buttonView)

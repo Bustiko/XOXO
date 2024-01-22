@@ -7,12 +7,12 @@
 
 import UIKit
 
+
+
 class ButtonsView: UIView {
     
     private let uiFunctions = UIFunctions()
     private var buttonTotal: Int
-    
-    private var buttons: [UIButton] = []
     
     init(buttonTotal: Int) {
         self.buttonTotal = buttonTotal
