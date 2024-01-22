@@ -7,9 +7,10 @@
 
 import UIKit
 
+
 struct MainPageUIFunctions {
     let uiFunctions = UIFunctions()
-    let buttonTotal = 16
+    
     
     func setupView(onView view: UIView, target: Any?, action: Selector ) {
         let label = uiFunctions.makeLabel(withText: "YOUR TURN", withSize: 40)

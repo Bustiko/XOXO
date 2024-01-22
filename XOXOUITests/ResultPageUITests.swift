@@ -1,23 +1,23 @@
 //
-//  XOXOUITests.swift
+//  ResultPageUITests.swift
 //  XOXOUITests
 //
-//  Created by Buse Karabıyık on 21.01.2024.
+//  Created by Buse Karabıyık on 22.01.2024.
 //
 
 import XCTest
 @testable import XOXO
 
-
-final class XOXOMainPageUITests: XCTestCase {
+final class ResultPageUITests: XCTestCase {
     
     private var app: XCUIApplication!
-    
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
+        
         app = XCUIApplication()
         app.launch()
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
@@ -25,18 +25,17 @@ final class XOXOMainPageUITests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
-        app = nil
     }
 
-    func testMainPageViewController_WhenViewIsLoaded_RequiredUIElemenetsAreEnabled() throws {
+    func testResultPageViewController_WhenViewLoaded_ButtonIsenabled() throws {
         // UI tests must launch the application that they test.
+       
+        app.buttons["0"].tap()
         
-        for x in 0..<buttonTotal {
-            let button = app.buttons["\(x)"]
-            XCTAssertTrue(button.isEnabled, "XO button \(x) is not enabled for user interaction")
-        }
+        let button = app.buttons["Play Again"]
         
+        XCTAssertTrue(button.isEnabled, "Play Again button is not enabled for user interaction")
+
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

@@ -28,8 +28,9 @@ class ButtonsView: UIView {
         
         let squareRooted = Int(sqrt(Double(buttonTotal)))
         
-        for _ in 0..<(buttonTotal) {
+        for x in 0..<(buttonTotal) {
             let button = uiFunctions.makeXOButton()
+            button.accessibilityIdentifier = "\(x)"
             buttons.append(button)
             self.addSubview(button)
         }

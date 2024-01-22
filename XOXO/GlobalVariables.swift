@@ -10,6 +10,5 @@ import UIKit
 // ****** ***** *****
 
 var buttons: [UIButton] = []
-
-
+let buttonTotal = 16
 // ****** ***** *****

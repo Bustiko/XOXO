@@ -22,6 +22,8 @@
 		C9420AA42B5D86AB00E2984C /* ResultPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9420AA32B5D86AB00E2984C /* ResultPageUIFunctions.swift */; };
 		C950E1E82B5E50410047B695 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950E1E72B5E50410047B695 /* ResultPageViewController.swift */; };
 		C950E1EA2B5EA66F0047B695 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950E1E92B5EA66F0047B695 /* GlobalVariables.swift */; };
+		C950E1EC2B5EB6790047B695 /* ResultPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950E1EB2B5EB6790047B695 /* ResultPageUITests.swift */; };
+		C990C0652B5ED7C100FCA45D /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950E1E92B5EA66F0047B695 /* GlobalVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		C9420AA32B5D86AB00E2984C /* ResultPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageUIFunctions.swift; sourceTree = "<group>"; };
 		C950E1E72B5E50410047B695 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		C950E1E92B5EA66F0047B695 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		C950E1EB2B5EB6790047B695 /* ResultPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C936A8D82B5D680800104736 /* XOXOMainPageUITests.swift */,
+				C950E1EB2B5EB6790047B695 /* ResultPageUITests.swift */,
 				C936A8DA2B5D680800104736 /* XOXOUITestsLaunchTests.swift */,
 			);
 			path = XOXOUITests;
@@ -325,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C936A8DB2B5D680800104736 /* XOXOUITestsLaunchTests.swift in Sources */,
+				C950E1EC2B5EB6790047B695 /* ResultPageUITests.swift in Sources */,
+				C990C0652B5ED7C100FCA45D /* GlobalVariables.swift in Sources */,
 				C936A8D92B5D680800104736 /* XOXOMainPageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

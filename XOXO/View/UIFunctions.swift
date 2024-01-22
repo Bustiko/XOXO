@@ -34,7 +34,7 @@ struct UIFunctions {
         var config = UIButton.Configuration.filled()
         config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
         config.baseBackgroundColor = UIColor(red: 0.98, green: 0.71, blue: 0.45, alpha: 1.00)
-        config.attributedTitle = AttributedString("X", attributes: container)
+        config.attributedTitle = AttributedString("", attributes: container)
 
     
         button.configuration = config
