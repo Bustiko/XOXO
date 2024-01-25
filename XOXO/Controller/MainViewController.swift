@@ -22,8 +22,9 @@ class MainViewController: UIViewController {
     
     @objc func buttonPressed(_ sender: UIButton) {
         
-        gameLogicModel.processPressLogic(forButton: sender, currentPlayer: "X")
-        
+        gameLogicModel.processPressLogic(forButton: sender, currentPlayer: gameLogicModel.currentPlayer)
+        let winner = gameLogicModel.decideChampion()
+        print(winner)
 //        let destination = ResultPageViewController()
 //        destination.modalPresentationStyle = .fullScreen
 //        destination.view.accessibilityIdentifier = "ResultPageView"

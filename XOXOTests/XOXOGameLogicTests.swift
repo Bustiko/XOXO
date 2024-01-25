@@ -49,6 +49,19 @@ final class XOXOGameLogicTests: XCTestCase {
         // Assert
         XCTAssertEqual(button.configuration?.attributedTitle, "X", "Text of the already occupied button was changed when pressed" )
     }
+    
+    func testGameLogicModel_WhenSpecificCharacterProvided_ChangesCharacterForNextRound() {
+        
+        // Arrange
+        let character: AttributedString = "X"
+        
+        // Act
+        let nextCharacter = sut.getNextPlayer(currentCharacter: character)
+        
+        // Assert
+        XCTAssertNotEqual(nextCharacter, character, "Character was not changed for the next round")
+        
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
