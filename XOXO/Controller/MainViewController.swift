@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     var uiFunctions = MainPageUIFunctions()
+    var gameLogicModel = GameLogicModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +20,15 @@ class MainViewController: UIViewController {
         
     }
     
-    @objc func buttonPressed(_ animated: Bool) {
-        let destination = ResultPageViewController()
-        destination.modalPresentationStyle = .fullScreen
-        destination.view.accessibilityIdentifier = "ResultPageView"
-        self.present(destination, animated: true)
+    @objc func buttonPressed(_ sender: UIButton) {
+        
+        gameLogicModel.processPressLogic(forButton: sender, currentPlayer: "X")
+        
+//        let destination = ResultPageViewController()
+//        destination.modalPresentationStyle = .fullScreen
+//        destination.view.accessibilityIdentifier = "ResultPageView"
+//        self.present(destination, animated: true)
+        
     }
     
     

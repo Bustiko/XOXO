@@ -18,8 +18,7 @@ struct MainPageUIFunctions {
         
         let buttonView = ButtonsView(buttonTotal: buttonTotal)
         buttonView.translatesAutoresizingMaskIntoConstraints = false
-        
-        buttons[0].addTarget(target, action: action, for: .touchUpInside)
+        addButtonTarget(target: target, action: action)
         
         view.addSubview(label)
         view.addSubview(buttonView)
@@ -38,5 +37,13 @@ struct MainPageUIFunctions {
             buttonView.widthAnchor.constraint(equalToConstant: CGFloat(sqrt(Double(buttonTotal))*97))
             
         ])
+    }
+    
+    func addButtonTarget(target: Any?, action: Selector) {
+        
+        for button in buttons {
+            button.addTarget(target, action: action, for: .touchUpInside)
+        }
+        
     }
 }

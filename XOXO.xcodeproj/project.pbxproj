@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92ACB9D2B62609A00661BAB /* GameLogicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92ACB9C2B62609A00661BAB /* GameLogicModel.swift */; };
 		C936A8B82B5D680700104736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936A8B72B5D680700104736 /* AppDelegate.swift */; };
 		C936A8BA2B5D680700104736 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936A8B92B5D680700104736 /* SceneDelegate.swift */; };
 		C936A8BC2B5D680700104736 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936A8BB2B5D680700104736 /* MainViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C92ACB9C2B62609A00661BAB /* GameLogicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicModel.swift; sourceTree = "<group>"; };
 		C936A8B42B5D680700104736 /* XOXO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XOXO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C936A8B72B5D680700104736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C936A8B92B5D680700104736 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		C936A8E72B5D683500104736 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C92ACB9C2B62609A00661BAB /* GameLogicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				C9420AA02B5D74AD00E2984C /* ButtonsView.swift in Sources */,
 				C936A8B82B5D680700104736 /* AppDelegate.swift in Sources */,
 				C950E1EA2B5EA66F0047B695 /* GlobalVariables.swift in Sources */,
+				C92ACB9D2B62609A00661BAB /* GameLogicModel.swift in Sources */,
 				C9420AA42B5D86AB00E2984C /* ResultPageUIFunctions.swift in Sources */,
 				C950E1E82B5E50410047B695 /* ResultPageViewController.swift in Sources */,
 				C9420AA22B5D827700E2984C /* MainPageUIFunctions.swift in Sources */,
