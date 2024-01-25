@@ -23,6 +23,8 @@ struct ResultPageUIFunctions {
         
         button.addTarget(target, action: action, for: .touchUpInside)
         
+        view.backgroundColor = UIColor(red: 0.99, green: 0.96, blue: 0.93, alpha: 1.00)
+        
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),

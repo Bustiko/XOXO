@@ -24,6 +24,9 @@ struct MainPageUIFunctions {
         view.addSubview(label)
         view.addSubview(buttonView)
         
+        view.backgroundColor = UIColor(red: 0.99, green: 0.96, blue: 0.93, alpha: 1.00)
+        view.accessibilityIdentifier = "MainPageView"
+        
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 90),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),

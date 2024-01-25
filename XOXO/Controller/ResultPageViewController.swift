@@ -22,6 +22,7 @@ class ResultPageViewController: UIViewController {
     
     @objc func playAgainPressed() {
         self.dismiss(animated: true)
+        
     }
     
     

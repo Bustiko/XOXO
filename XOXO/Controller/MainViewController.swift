@@ -14,9 +14,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 0.99, green: 0.96, blue: 0.93, alpha: 1.00)
         uiFunctions.setupView(onView: view, target: self, action: #selector(buttonPressed))
-        
         
         
     }
@@ -24,6 +22,7 @@ class MainViewController: UIViewController {
     @objc func buttonPressed(_ animated: Bool) {
         let destination = ResultPageViewController()
         destination.modalPresentationStyle = .fullScreen
+        destination.view.accessibilityIdentifier = "ResultPageView"
         self.present(destination, animated: true)
     }
     

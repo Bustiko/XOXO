@@ -34,9 +34,35 @@ final class ResultPageUITests: XCTestCase {
         
         let button = app.buttons["Play Again"]
         
+        //*** screenshots
+        let buttonScreenshot = button.screenshot()
+        let buttonAttachment = XCTAttachment(screenshot: buttonScreenshot)
+        buttonAttachment.name = "Screenshot of Play Again button"
+        buttonAttachment.lifetime = .keepAlways
+        add(buttonAttachment)
+        
+        //let currentAppWindowScreenshot = app.screenshot()
+        let currentAppWindowScreenshot = XCUIScreen.main.screenshot()
+        let currentAppWindowAttachment = XCTAttachment(screenshot: currentAppWindowScreenshot)
+        currentAppWindowAttachment.name = "Screenshot of the Result Page"
+        currentAppWindowAttachment.lifetime = .keepAlways
+        add(currentAppWindowAttachment)
+        
+        //***
+        
         XCTAssertTrue(button.isEnabled, "Play Again button is not enabled for user interaction")
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testPlayAgainButton_WhenPressed_ResultViewControllerGetsDismissed() {
+        
+        app.buttons["0"].tap()
+        
+        app.buttons["Play Again"].tap()
+        
+        XCTAssertTrue(app.otherElements["MainPageView"].waitForExistence(timeout: 1), "Result page was not dismissed when play again button was pressed")
+        
     }
 
     func testLaunchPerformance() throws {

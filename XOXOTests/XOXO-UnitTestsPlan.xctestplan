@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8AC4A7E4-A7AA-4EE2-9808-764BF810C697",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:XOXO.xcodeproj",
+        "identifier" : "C936A8C92B5D680800104736",
+        "name" : "XOXOTests"
+      }
+    }
+  ],
+  "version" : 1
+}
