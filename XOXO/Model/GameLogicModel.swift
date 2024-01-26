@@ -92,10 +92,24 @@ struct GameLogicModel {
                 return getNextPlayer(currentCharacter: currentPlayer)
             }
         }
-           
- 
+        
+        
         return ""
         
+    }
+    
+    
+    internal func decideIfDraw() -> Bool {
+        var draw = false
+        for button in buttons {
+            if button.configuration?.attributedTitle == "" {
+                draw = false
+            }else {
+                draw = true
+            }
+        }
+        
+        return draw
     }
 
     

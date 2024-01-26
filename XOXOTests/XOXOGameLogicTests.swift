@@ -106,6 +106,19 @@ final class XOXOGameLogicTests: XCTestCase {
     }
     
     
+    func testGameLogicModel_WhenDrawOccurs_ReturnTrue() {
+        
+        for x in 0..<buttonTotal {
+            buttons[x].configuration?.attributedTitle = "O"
+        }
+        
+        let isDraw = sut.decideIfDraw()
+        
+        XCTAssertTrue(isDraw)
+        
+    }
+    
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

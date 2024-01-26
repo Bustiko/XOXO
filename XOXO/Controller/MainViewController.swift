@@ -24,11 +24,17 @@ class MainViewController: UIViewController {
         
         gameLogicModel.processPressLogic(forButton: sender, currentPlayer: gameLogicModel.currentPlayer)
         let winner = gameLogicModel.decideChampion()
+        let isDraw = gameLogicModel.decideIfDraw()
         print(winner)
-//        let destination = ResultPageViewController()
-//        destination.modalPresentationStyle = .fullScreen
-//        destination.view.accessibilityIdentifier = "ResultPageView"
-//        self.present(destination, animated: true)
+        print(isDraw)
+        
+        if winner != "" || isDraw == true {
+            let destination = ResultPageViewController()
+            destination.modalPresentationStyle = .fullScreen
+            destination.view.accessibilityIdentifier = "ResultPageView"
+            self.present(destination, animated: true)
+        }
+
         
     }
     
