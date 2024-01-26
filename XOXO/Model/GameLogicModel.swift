@@ -55,8 +55,8 @@ struct GameLogicModel {
             correct = 0
             if let title = buttons[col].configuration?.attributedTitle,
                title != "" {
-                for x in buttonTotalSquared...buttonTotal-buttonTotalSquared {
-                    if title == buttons[col + x].configuration?.attributedTitle {
+                for x in 1..<buttonTotalSquared {
+                    if title == buttons[col + x*buttonTotalSquared].configuration?.attributedTitle {
                         correct += 1
                     }
                 }
@@ -100,12 +100,10 @@ struct GameLogicModel {
     
     
     internal func decideIfDraw() -> Bool {
-        var draw = false
+        var draw = true
         for button in buttons {
             if button.configuration?.attributedTitle == "" {
                 draw = false
-            }else {
-                draw = true
             }
         }
         

@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
         let isDraw = gameLogicModel.decideIfDraw()
         print(winner)
         print(isDraw)
+       
         
         if winner != "" || isDraw == true {
             let destination = ResultPageViewController()
