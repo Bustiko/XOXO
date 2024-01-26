@@ -16,23 +16,21 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         uiFunctions.setupView(onView: view, target: self, action: #selector(buttonPressed))
-        
+        uiFunctions.label.text = String(gameLogicModel.currentPlayer.characters) + "'s TURN"
         
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        
         gameLogicModel.processPressLogic(forButton: sender, currentPlayer: gameLogicModel.currentPlayer)
+        uiFunctions.label.text = String(gameLogicModel.currentPlayer.characters) + "'s TURN"
         let winner = gameLogicModel.decideChampion()
         let isDraw = gameLogicModel.decideIfDraw()
-        print(winner)
-        print(isDraw)
-       
-        
+    
         if winner != "" || isDraw == true {
             let destination = ResultPageViewController()
             destination.modalPresentationStyle = .fullScreen
             destination.view.accessibilityIdentifier = "ResultPageView"
+            destination.uiFunctions.label.text = String(winner.characters) + " WINS"
             self.present(destination, animated: true)
         }
 

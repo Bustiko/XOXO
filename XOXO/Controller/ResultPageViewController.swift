@@ -9,7 +9,7 @@ import UIKit
 
 class ResultPageViewController: UIViewController {
     
-    let uiFunctions = ResultPageUIFunctions()
+    var uiFunctions = ResultPageUIFunctions()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,9 @@ class ResultPageViewController: UIViewController {
     @objc func playAgainPressed() {
         self.dismiss(animated: true)
         
+        for button in buttons {
+            button.configuration?.attributedTitle = ""
+        }
     }
     
     

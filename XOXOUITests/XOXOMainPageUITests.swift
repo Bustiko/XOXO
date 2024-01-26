@@ -40,13 +40,7 @@ final class XOXOMainPageUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testXOButton_WhenPressed_PresentsResultViewController() {
-        
-        app.buttons["0"].tap()
-        
-        XCTAssertTrue(app.otherElements["ResultPageView"].waitForExistence(timeout: 1), "Result page was not presented")
-        
-    }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

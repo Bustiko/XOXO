@@ -10,10 +10,10 @@ import UIKit
 
 struct MainPageUIFunctions {
     let uiFunctions = UIFunctions()
+    var label = UILabel()
     
-    
-    func setupView(onView view: UIView, target: Any?, action: Selector ) {
-        let label = uiFunctions.makeLabel(withText: "YOUR TURN", withSize: 40)
+    mutating func setupView(onView view: UIView, target: Any?, action: Selector ) {
+        label = uiFunctions.makeLabel(withText: "YOUR TURN", withSize: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         let buttonView = ButtonsView(buttonTotal: buttonTotal)

@@ -10,9 +10,10 @@ import UIKit
 struct ResultPageUIFunctions {
     
     let uifunctions = UIFunctions()
+    var label = UILabel()
     
-    func setupView(onView view: UIView, target: Any?, action: Selector) {
-        let label = uifunctions.makeLabel(withText: "YOU WIN", withSize: 50)
+    mutating func setupView(onView view: UIView, target: Any?, action: Selector) {
+        label = uifunctions.makeLabel(withText: "YOU WIN", withSize: 50)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         let button = uifunctions.makeButton(withtext: "Play Again")
