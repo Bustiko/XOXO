@@ -62,6 +62,50 @@ final class XOXOGameLogicTests: XCTestCase {
         XCTAssertNotEqual(nextCharacter, character, "Character was not changed for the next round")
         
     }
+    
+    func testGameLogicModel_WhenHorizantalWinOccurs_DecideWinner() {
+        
+        // Arrange
+        for x in 0..<buttonTotalSquared {
+            buttons[x].configuration?.attributedTitle = "O"
+        }
+        
+        // Act
+        let horizantalWinner = sut.decideChampion()
+        
+        // Assert
+        XCTAssertEqual(horizantalWinner, "O")
+    }
+    
+    func testGameLogicModel_WhenVerticalWinOccurs_DecideWinner() {
+        
+        // Arrange
+        for x in 0..<buttonTotalSquared {
+            buttons[buttonTotalSquared*x].configuration?.attributedTitle = "O"
+        }
+        
+        // Act
+        let verticalWinner = sut.decideChampion()
+        
+        // Assert
+        XCTAssertEqual(verticalWinner, "O")
+    }
+    
+    func testGameLogicModel_WhenDiagonalWinOccurs_DecideWinner() {
+        
+        // Arrange
+        for x in 0..<buttonTotalSquared {
+            buttons[buttonTotalSquared*x+x].configuration?.attributedTitle = "O"
+        }
+        
+        // Act
+        let diagonalWinner = sut.decideChampion()
+        
+        // Assert
+        XCTAssertEqual(diagonalWinner, "O")
+    }
+    
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
