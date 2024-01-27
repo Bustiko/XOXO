@@ -12,6 +12,14 @@ struct GameLogicModel {
     internal var currentPlayer: AttributedString = "X"
     private var correct = 0
     
+    
+    internal mutating func createAttributedString() {
+        
+        container.font = UIFont(name: "Chalkduster", size: 50)
+        
+        currentPlayer = AttributedString("X", attributes: container)
+    }
+    
     internal mutating func processPressLogic(forButton button: UIButton, currentPlayer playerCharacter: AttributedString) {
         if button.configuration?.attributedTitle == "" {
             button.configuration?.attributedTitle = playerCharacter
@@ -23,10 +31,10 @@ struct GameLogicModel {
     
     internal mutating func getNextPlayer(currentCharacter: AttributedString) -> AttributedString {
         
-        if currentCharacter == "X" {
-            return "O"
+        if currentCharacter == AttributedString("X", attributes: container) {
+            return AttributedString("O", attributes: container)
         }else {
-            return "X"
+            return AttributedString("X", attributes: container)
         }
         
     }
