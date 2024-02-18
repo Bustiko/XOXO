@@ -31,7 +31,7 @@ class ButtonsView: UIView {
         for x in 0..<(buttonTotal) {
             let button = uiFunctions.makeXOButton()
             button.accessibilityIdentifier = "\(x)"
-            buttons.append(button)
+            Singletons.buttons.append(button)
             self.addSubview(button)
         }
         
@@ -39,28 +39,28 @@ class ButtonsView: UIView {
         
         for x in 0..<(buttonTotal) {
             
-            buttons[x].widthAnchor.constraint(equalToConstant: 97).isActive = true
-            buttons[x].heightAnchor.constraint(equalToConstant: 97).isActive = true
-            buttons[x].translatesAutoresizingMaskIntoConstraints = false
+            Singletons.buttons[x].widthAnchor.constraint(equalToConstant: 97).isActive = true
+            Singletons.buttons[x].heightAnchor.constraint(equalToConstant: 97).isActive = true
+            Singletons.buttons[x].translatesAutoresizingMaskIntoConstraints = false
         
             if x >= 0 && x <= (squareRooted-1) {
                 if x == 0 {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
                     
                 }else if x == (squareRooted-1) {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
                     
                 }else {
                 
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     
                 }
             }else if x >= squareRooted && x < (buttonTotal-squareRooted) {
@@ -68,42 +68,42 @@ class ButtonsView: UIView {
                 
                 if x == squareRooted*currentMiddleRow {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
                     
                 }else if x == (squareRooted*currentMiddleRow-1) {
                     currentMiddleRow -= 1
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
                     
                 }else {
                     currentMiddleRow -= 1
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
         
                 }
                 
             }else {
                 if x == (buttonTotal-squareRooted) {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
                     
                 }else if x == buttonTotal-1 {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
                     
                 }else {
                     
-                    buttons[x].leadingAnchor.constraint(equalTo: buttons[x-1].trailingAnchor).isActive = true
-                    buttons[x].trailingAnchor.constraint(equalTo: buttons[x+1].leadingAnchor).isActive = true
-                    buttons[x].topAnchor.constraint(equalTo: buttons[x-squareRooted].bottomAnchor).isActive = true
+                    Singletons.buttons[x].leadingAnchor.constraint(equalTo: Singletons.buttons[x-1].trailingAnchor).isActive = true
+                    Singletons.buttons[x].trailingAnchor.constraint(equalTo: Singletons.buttons[x+1].leadingAnchor).isActive = true
+                    Singletons.buttons[x].topAnchor.constraint(equalTo: Singletons.buttons[x-squareRooted].bottomAnchor).isActive = true
                     
                 }
                 

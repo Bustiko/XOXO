@@ -23,7 +23,7 @@ class ResultPageViewController: UIViewController {
     @objc func playAgainPressed() {
         self.dismiss(animated: true)
         
-        for button in buttons {
+        for button in Singletons.buttons {
             button.configuration?.attributedTitle = ""
         }
     }

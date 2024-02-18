@@ -30,7 +30,7 @@ final class ResultPageUITests: XCTestCase {
     func testResultPageViewController_WhenViewLoaded_ButtonIsenabled() throws {
         // UI tests must launch the application that they test.
        
-        for x in 0...buttonTotal-buttonTotalSquared {
+        for x in 0...Singletons.buttonTotal-Singletons.buttonTotalSquared {
             app.buttons["\(x)"].tap()
         }
         
@@ -59,7 +59,7 @@ final class ResultPageUITests: XCTestCase {
     
     func testPlayAgainButton_WhenPressed_ResultViewControllerGetsDismissed() {
         
-        for x in 0...buttonTotal-buttonTotalSquared {
+        for x in 0...Singletons.buttonTotal-Singletons.buttonTotalSquared {
             app.buttons["\(x)"].tap()
         }
         

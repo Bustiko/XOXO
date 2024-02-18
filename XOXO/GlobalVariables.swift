@@ -8,9 +8,13 @@
 import UIKit
 
 // ****** ***** *****
+struct Singletons {
+    
+    static var buttons: [UIButton] = []
+    static let buttonTotal = 9
+    static let buttonTotalSquared = Int(sqrt(Double(buttonTotal)))
+    static var container = AttributeContainer()
+    
+}
 
-var buttons: [UIButton] = []
-let buttonTotal = 16
-let buttonTotalSquared = Int(sqrt(Double(buttonTotal)))
-var container = AttributeContainer()
 // ****** ***** *****

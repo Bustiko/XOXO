@@ -16,7 +16,7 @@ struct MainPageUIFunctions {
         label = uiFunctions.makeLabel(withText: "YOUR TURN", withSize: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        let buttonView = ButtonsView(buttonTotal: buttonTotal)
+        let buttonView = ButtonsView(buttonTotal: Singletons.buttonTotal)
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         addButtonTarget(target: target, action: action)
         
@@ -33,15 +33,15 @@ struct MainPageUIFunctions {
             
             buttonView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 30),
-            buttonView.heightAnchor.constraint(equalToConstant: CGFloat(sqrt(Double(buttonTotal))*97)),
-            buttonView.widthAnchor.constraint(equalToConstant: CGFloat(sqrt(Double(buttonTotal))*97))
+            buttonView.heightAnchor.constraint(equalToConstant: CGFloat(sqrt(Double(Singletons.buttonTotal))*97)),
+            buttonView.widthAnchor.constraint(equalToConstant: CGFloat(sqrt(Double(Singletons.buttonTotal))*97))
             
         ])
     }
     
     func addButtonTarget(target: Any?, action: Selector) {
         
-        for button in buttons {
+        for button in Singletons.buttons {
             button.addTarget(target, action: action, for: .touchUpInside)
         }
         

@@ -26,8 +26,8 @@ final class XOXOGameLogicTests: XCTestCase {
     func testGameLogicModel_WhenUnoccupiedButtonPressed_ButtonTextGetsChangedToCharacter() {
         
         // Arrange
-        let button = buttons[0]
-        let character: AttributedString = AttributedString("X", attributes: container)
+        let button = Singletons.buttons[0]
+        let character: AttributedString = AttributedString("X", attributes: Singletons.container)
         
         // Act
         sut.createAttributedString()
@@ -40,22 +40,22 @@ final class XOXOGameLogicTests: XCTestCase {
     func testGameLogicModel_WhenOccupiedButtonPressed_ButtonTextStaysUnchanged() {
         
         // Arrange
-        let button = buttons[0]
-        let character: AttributedString = AttributedString("O", attributes: container)
+        let button = Singletons.buttons[0]
+        let character: AttributedString = AttributedString("O", attributes: Singletons.container)
         
-        button.configuration?.attributedTitle = AttributedString("X", attributes: container)
+        button.configuration?.attributedTitle = AttributedString("X", attributes: Singletons.container)
         
         // Act
         sut.processPressLogic(forButton: button, currentPlayer: character)
         
         // Assert
-        XCTAssertEqual(button.configuration?.attributedTitle, AttributedString("X", attributes: container), "Text of the already occupied button was changed when pressed" )
+        XCTAssertEqual(button.configuration?.attributedTitle, AttributedString("X", attributes: Singletons.container), "Text of the already occupied button was changed when pressed" )
     }
     
     func testGameLogicModel_WhenSpecificCharacterProvided_ChangesCharacterForNextRound() {
         
         // Arrange
-        let character: AttributedString = AttributedString("X", attributes: container)
+        let character: AttributedString = AttributedString("X", attributes: Singletons.container)
         
         // Act
         let nextCharacter = sut.getNextPlayer(currentCharacter: character)
@@ -68,50 +68,50 @@ final class XOXOGameLogicTests: XCTestCase {
     func testGameLogicModel_WhenHorizantalWinOccurs_DecideWinner() {
         
         // Arrange
-        for x in 0..<buttonTotalSquared {
-            buttons[x].configuration?.attributedTitle = AttributedString("O", attributes: container)
+        for x in 0..<Singletons.buttonTotalSquared {
+            Singletons.buttons[x].configuration?.attributedTitle = AttributedString("O", attributes: Singletons.container)
         }
         
         // Act
         let horizantalWinner = sut.decideChampion()
         
         // Assert
-        XCTAssertEqual(horizantalWinner, AttributedString("O", attributes: container))
+        XCTAssertEqual(horizantalWinner, AttributedString("O", attributes: Singletons.container))
     }
     
     func testGameLogicModel_WhenVerticalWinOccurs_DecideWinner() {
         
         // Arrange
-        for x in 0..<buttonTotalSquared {
-            buttons[buttonTotalSquared*x].configuration?.attributedTitle = AttributedString("O", attributes: container)
+        for x in 0..<Singletons.buttonTotalSquared {
+            Singletons.buttons[Singletons.buttonTotalSquared*x].configuration?.attributedTitle = AttributedString("O", attributes: Singletons.container)
         }
         
         // Act
         let verticalWinner = sut.decideChampion()
         
         // Assert
-        XCTAssertEqual(verticalWinner, AttributedString("O", attributes: container))
+        XCTAssertEqual(verticalWinner, AttributedString("O", attributes: Singletons.container))
     }
     
     func testGameLogicModel_WhenDiagonalWinOccurs_DecideWinner() {
         
         // Arrange
-        for x in 0..<buttonTotalSquared {
-            buttons[buttonTotalSquared*x+x].configuration?.attributedTitle = AttributedString("O", attributes: container)
+        for x in 0..<Singletons.buttonTotalSquared {
+            Singletons.buttons[Singletons.buttonTotalSquared*x+x].configuration?.attributedTitle = AttributedString("O", attributes: Singletons.container)
         }
         
         // Act
         let diagonalWinner = sut.decideChampion()
         
         // Assert
-        XCTAssertEqual(diagonalWinner, AttributedString("O", attributes: container))
+        XCTAssertEqual(diagonalWinner, AttributedString("O", attributes: Singletons.container))
     }
     
     
     func testGameLogicModel_WhenDrawOccurs_ReturnTrue() {
         
-        for x in 0..<buttonTotal {
-            buttons[x].configuration?.attributedTitle = AttributedString("O", attributes: container)
+        for x in 0..<Singletons.buttonTotal {
+            Singletons.buttons[x].configuration?.attributedTitle = AttributedString("O", attributes: Singletons.container)
         }
         
         let isDraw = sut.decideIfDraw()
