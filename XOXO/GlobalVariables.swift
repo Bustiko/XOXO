@@ -8,7 +8,7 @@
 import UIKit
 
 // ****** ***** *****
-struct Singletons {
+struct Variables {
     
     static var buttons: [UIButton] = []
     static let buttonTotal = 9
