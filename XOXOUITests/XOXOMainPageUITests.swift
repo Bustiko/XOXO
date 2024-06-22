@@ -32,7 +32,7 @@ final class XOXOMainPageUITests: XCTestCase {
     func testMainPageViewController_WhenViewIsLoaded_RequiredUIElemenetsAreEnabled() throws {
         // UI tests must launch the application that they test.
         
-        for x in 0..<Singletons.buttonTotal {
+        for x in 0..<Variables.buttonTotal {
             let button = app.buttons["\(x)"]
             XCTAssertTrue(button.isEnabled, "XO button \(x) is not enabled for user interaction")
         }

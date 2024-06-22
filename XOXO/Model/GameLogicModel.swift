@@ -15,9 +15,9 @@ struct GameLogicModel {
     
     internal mutating func createAttributedString() {
         
-        Singletons.container.font = UIFont(name: "Chalkduster", size: 50)
+        Variables.container.font = UIFont(name: "Chalkduster", size: 50)
         
-        currentPlayer = AttributedString("X", attributes: Singletons.container)
+        currentPlayer = AttributedString("X", attributes: Variables.container)
     }
     
     internal mutating func processPressLogic(forButton button: UIButton, currentPlayer playerCharacter: AttributedString) {
@@ -31,10 +31,10 @@ struct GameLogicModel {
     
     internal mutating func getNextPlayer(currentCharacter: AttributedString) -> AttributedString {
         
-        if currentCharacter == AttributedString("X", attributes: Singletons.container) {
-            return AttributedString("O", attributes: Singletons.container)
+        if currentCharacter == AttributedString("X", attributes: Variables.container) {
+            return AttributedString("O", attributes: Variables.container)
         }else {
-            return AttributedString("X", attributes: Singletons.container)
+            return AttributedString("X", attributes: Variables.container)
         }
         
     }
@@ -42,61 +42,61 @@ struct GameLogicModel {
     internal mutating func decideChampion() -> AttributedString {
         
         // horizantol win
-        for row in 0..<Singletons.buttonTotalSquared {
+        for row in 0..<Variables.buttonTotalSquared {
             correct = 0
-            let startIndex = row * Singletons.buttonTotalSquared
-            if let title = Singletons.buttons[startIndex].configuration?.attributedTitle,
+            let startIndex = row * Variables.buttonTotalSquared
+            if let title = Variables.buttons[startIndex].configuration?.attributedTitle,
                title != "" {
-                for x in 1...Singletons.buttonTotalSquared-1 {
-                    if title == Singletons.buttons[startIndex + x].configuration?.attributedTitle {
+                for x in 1...Variables.buttonTotalSquared-1 {
+                    if title == Variables.buttons[startIndex + x].configuration?.attributedTitle {
                         correct += 1
                     }
                 }
-                if correct == Singletons.buttonTotalSquared-1 {
+                if correct == Variables.buttonTotalSquared-1 {
                     return getNextPlayer(currentCharacter: currentPlayer)
                 }
             }
         }
         
         //vertical win
-        for col in 0..<Singletons.buttonTotalSquared {
+        for col in 0..<Variables.buttonTotalSquared {
             correct = 0
-            if let title = Singletons.buttons[col].configuration?.attributedTitle,
+            if let title = Variables.buttons[col].configuration?.attributedTitle,
                title != "" {
-                for x in 1..<Singletons.buttonTotalSquared {
-                    if title == Singletons.buttons[col + x*Singletons.buttonTotalSquared].configuration?.attributedTitle {
+                for x in 1..<Variables.buttonTotalSquared {
+                    if title == Variables.buttons[col + x*Variables.buttonTotalSquared].configuration?.attributedTitle {
                         correct += 1
                     }
                 }
-                if correct == Singletons.buttonTotalSquared-1 {
+                if correct == Variables.buttonTotalSquared-1 {
                     return getNextPlayer(currentCharacter: currentPlayer)
                 }
             }
         }
         
         //diagonal win
-        if let title = Singletons.buttons[0].configuration?.attributedTitle,
+        if let title = Variables.buttons[0].configuration?.attributedTitle,
            title != "" {
             correct = 0
-            for x in 1..<Singletons.buttonTotalSquared {
-                if title == Singletons.buttons[Singletons.buttonTotalSquared*x + x].configuration?.attributedTitle {
+            for x in 1..<Variables.buttonTotalSquared {
+                if title == Variables.buttons[Variables.buttonTotalSquared*x + x].configuration?.attributedTitle {
                     correct += 1
                 }
             }
-            if correct == Singletons.buttonTotalSquared-1 {
+            if correct == Variables.buttonTotalSquared-1 {
                 return getNextPlayer(currentCharacter: currentPlayer)
             }
          }
             
-        if let title = Singletons.buttons[Singletons.buttonTotalSquared-1].configuration?.attributedTitle,
+        if let title = Variables.buttons[Variables.buttonTotalSquared-1].configuration?.attributedTitle,
            title != "" {
             correct = 0
-            for x in 1..<Singletons.buttonTotalSquared {
-                if title == Singletons.buttons[Singletons.buttonTotalSquared-1+Singletons.buttonTotalSquared*x-x].configuration?.attributedTitle {
+            for x in 1..<Variables.buttonTotalSquared {
+                if title == Variables.buttons[Variables.buttonTotalSquared-1+Variables.buttonTotalSquared*x-x].configuration?.attributedTitle {
                     correct += 1
                 }
             }
-            if correct == Singletons.buttonTotalSquared-1 {
+            if correct == Variables.buttonTotalSquared-1 {
                 return getNextPlayer(currentCharacter: currentPlayer)
             }
         }
@@ -109,7 +109,7 @@ struct GameLogicModel {
     
     internal func decideIfDraw() -> Bool {
         var draw = true
-        for button in Singletons.buttons {
+        for button in Variables.buttons {
             if button.configuration?.attributedTitle == "" {
                 draw = false
             }
