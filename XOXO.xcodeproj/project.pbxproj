@@ -69,6 +69,7 @@
 		C95467F22B60096300060FD6 /* XOXOMainTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = XOXOMainTestPlan.xctestplan; sourceTree = "<group>"; };
 		C95467F32B60359300060FD6 /* XOXO-UITestsPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "XOXO-UITestsPlan.xctestplan"; sourceTree = "<group>"; };
 		C95467F42B6035E700060FD6 /* XOXO-UnitTestsPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "XOXO-UnitTestsPlan.xctestplan"; sourceTree = "<group>"; };
+		C996EBC32D48360C000C0F4E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		C936A8AB2B5D680700104736 = {
 			isa = PBXGroup;
 			children = (
+				C996EBC32D48360C000C0F4E /* .gitignore */,
 				C95467F22B60096300060FD6 /* XOXOMainTestPlan.xctestplan */,
 				C936A8B62B5D680700104736 /* XOXO */,
 				C936A8CD2B5D680800104736 /* XOXOTests */,
